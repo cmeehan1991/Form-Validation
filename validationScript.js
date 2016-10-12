@@ -8,11 +8,11 @@ $(document).ready(function(){
 	$("input[type=email]").keyup(function(){
 		var input = $(this);
 		var emailText = $(this).val();
-		if(!validateElonEmail(emailText)){
+		if(!validateElonEmail(emailText)){ // Change this depending on if you want only elon emails or if you want to allow any email address
 			$(input).css('outline','1px solid red');
-			emailIsValid = true;
 		}else{
 			$(input).css('outline','1px solid green');
+			emailIsValid = true;
 		}
 	});
 	
@@ -21,6 +21,7 @@ $(document).ready(function(){
 		var input = $(this);
 		var phoneValue = $(this).val();
 		input.val(formatPhoneNumber(input, phoneValue));
+		phoneIsValid = true;
 	});
 });
 
